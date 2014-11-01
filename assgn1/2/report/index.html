@@ -1,0 +1,209 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 1</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	<h3>Grayscale Transformations</h3>
+	<ol type="a">
+		<li>
+			<h4>Linear Contrast Stretching</h4>
+			<h5>Formula,</h5>
+			I<sub>new</sub> = (I<sub>old</sub> - I<sub>min</sub>) * 255 / (I<sub>max</sub> - I<sub>min</sub>)
+			<ul>
+				<li>
+					Image - barbara.png <br>
+					<figure>
+						<img src="barbara.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="barbara_a.png" width="600"/>
+						<figcaption>Linear Contrast Stretched Image </figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - TEM.png <br>
+					<figure>
+						<img src="TEM.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="TEM_a.png" width="600"/>
+						<figcaption>Linear Contrast Stretched Image </figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - canyon.png <br>
+					<figure>
+						<img src="canyon.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="canyon_a.png" width="600"/>
+						<figcaption>Linear Contrast Stretched Image </figcaption>
+					</figure>
+				</li>
+			</ul>
+			<h4>Histogram Equalization (HE)</h4>
+			<ul>
+				<li>
+					Image - barbara.png <br>
+					<figure>
+						<img src="barbara.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="barbara_b.png" width="600"/>
+						<figcaption>Histogram Equalized Image</figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - TEM.png <br>
+					<figure>
+						<img src="TEM.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="TEM_b.png" width="600"/>
+						<figcaption>Histogram Equalized Image</figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - canyon.png <br>
+					<figure>
+						<img src="canyon.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="canyon_b.png" width="600"/>
+						<figcaption>Histogram Equalized Image</figcaption>
+					</figure>
+				</li>
+			</ul>
+			<h4>Adaptive Histogram Equalization (AHE)</h4>
+			<ul>
+				<li>
+					Image - barbara.png <br>
+					<figure>
+						<img src="barbara.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="barbara_c_100.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 100</figcaption>
+					</figure>
+					<figure>
+						<img src="barbara_c_10.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 10</figcaption>
+					</figure>
+					<figure>
+						<img src="barbara_c_200.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 200</figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - TEM.png <br>
+					<figure>
+						<img src="TEM.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="TEM_c_100.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 100</figcaption>
+					</figure>
+					<figure>
+						<img src="TEM_c_10.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 10</figcaption>
+					</figure>
+					<figure>
+						<img src="TEM_c_200.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 200</figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - canyon.png <br>
+					<figure>
+						<img src="canyon.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="canyon_c_100.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 100</figcaption>
+					</figure>
+					<figure>
+						<img src="canyon_c_10.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 10</figcaption>
+					</figure>
+					<figure>
+						<img src="canyon_c_200.png" width="600"/>
+						<figcaption>Adaptive Histogram Equalized Image - Window 200</figcaption>
+					</figure>
+				</li>
+			</ul>
+			<h4>Contrast-Limited Adaptive Histogram Equalization (CLAHE)</h4>
+			<ul>
+				<li>
+					Image - barbara.png <br>
+					<figure>
+						<img src="barbara.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="barbara_d_002.png" width="600"/>
+						<figcaption>CLAHE Image - Window 100, Threshold 0.02</figcaption>
+					</figure>
+					<figure>
+						<img src="barbara_d_001.png" width="600"/>
+						<figcaption>CLAHE Image - Window 100, Threshold 0.01</figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - TEM.png <br>
+					<figure>
+						<img src="TEM.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="TEM_d_002.png" width="600"/>
+						<figcaption>CLAHE Image - Window 100, Threshold 0.02</figcaption>
+					</figure>
+					<figure>
+						<img src="TEM_d_001.png" width="600"/>
+						<figcaption>CLAHE Image - Window 100, Threshold 0.01</figcaption>
+					</figure>
+				</li>
+				<li>
+					Image - canyon.png <br>
+					<figure>
+						<img src="canyon.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="canyon_d_002.png" width="600"/>
+						<figcaption>CLAHE Image - Window 100, Threshold 0.02</figcaption>
+					</figure>
+					<figure>
+						<img src="canyon_d_001.png" width="600"/>
+						<figcaption>CLAHE Image - Window 100, Threshold 0.01</figcaption>
+					</figure>
+				</li>
+			</ul>
+		</li>
+	</ol>
+</body>
+</html>

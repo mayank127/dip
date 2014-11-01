@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 1</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	
+	<h3>Image Resizing</h3>
+	<ol type="a">
+		<li>
+			<h4>Image Shrinking</h4>
+			Circles concentric - shrinking subsampling - with d=2 and d=3 <br>
+			<figure >
+				<img src="shrink_orig.png" width="600"/>
+				<figcaption>Original Image </figcaption>
+			</figure>
+			<br>
+			<figure>
+				<img src="shrink_2.png" width="600"/>
+				<figcaption>d=2 Image </figcaption>
+			</figure>
+			<figure>
+				<img src="shrink_3.png" width="600"/>
+				<figcaption>d=3 Image </figcaption>
+			</figure>
+		</li>
+		<li>
+			<h4>Image Enlargement using Bilinear Interpolation</h4>
+			barbaraSmall - Enlargement - rows = 3M-2, columns = 2N-1 <br>
+			<figure>
+				<img src="zoom_orig.png" width="600"/>
+				<figcaption>Original Image </figcaption>
+			</figure>
+			<figure>
+				<img src="zoom_bi.png" width="600"/>
+				<figcaption>Bilinear Interpolation Image </figcaption>
+			</figure>
+		</li>
+		<li>
+			<h4>Image Enlargement using Nearest-Neighbor Interpolation</h4>
+			barbaraSmall - Enlargement - rows = 3M-2, columns = 2N-1 <br>
+			<figure>
+				<img src="zoom_orig.png" width="600"/>
+				<figcaption>Original Image </figcaption>
+			</figure>
+			<figure>
+				<img src="zoom_nbr.png" width="600"/>
+				<figcaption>Nearest Neighbor Image </figcaption>
+			</figure>
+		</li>
+	</ol>
+</body>
+</html>
