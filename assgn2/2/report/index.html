@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 2</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	<h3>Edge-preserving Smoothing using Bilateral Filtering</h3>
+	<ul >
+		<li>
+			<ul>
+				<li>
+					Image - barbara.png <br>		
+					<h4>sigma(space): .54 , sigma(intensity): 1.8</h4>
+					<figure>
+						<img src="orig.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="A2.png" width="600"/>
+						<figcaption>Corrupted Image </figcaption>
+					</figure>
+					<figure>
+						<img src="B2.png" width="600"/>
+						<figcaption>Filtered Version , rmsd = 0.0452</figcaption>
+					</figure>
+					<figure>
+						<img src="C2.png" width="600"/>
+						<figcaption>Mask for the spatial gaussian </figcaption>
+					</figure>
+				</li>
+				<li>
+				<h4>Other Filtered Images</h4>
+					<figure>
+						<img src="B2-1.png" width="600"/>
+						<figcaption> 0.9 sigma(space) and sigma(intensity) , rmsd = 0.0462</figcaption>
+					</figure>
+
+					<figure>
+						<img src="B2-2.png" width="600"/>
+						<figcaption> 1.1 sigma(space) and sigma(intensity) , rmsd = 0.0454</figcaption>
+					</figure>
+					<figure>
+						<img src="B2-3.png" width="600"/>
+						<figcaption>sigma(space) and .9 sigma(intensity) , rmsd = 0.0457</figcaption>
+					</figure>
+					<figure>
+						<img src="B2-4.png" width="600"/>
+						<figcaption>sigma(space) and 1.1 sigma(intensity) , rmsd = 0.0487 </figcaption>
+					</figure>
+				</li>
+				<li>
+					<h4>RMSD Values</h4>
+					<table width="600">
+						<thead>
+							<th>sigma(space)</th>
+							<th>sigma(intensity)</th>
+							<th>RMSD</th>
+						</thead>
+						<tr>
+							<td>0.54</td>
+							<td>1.8</td>
+							<td>0.0452</td>
+						</tr>
+
+						<tr>
+							<td>0.486</td>
+							<td>1.8</td>
+							<td>0.0462</td>
+						</tr>
+
+						<tr>
+							<td>0.594</td>
+							<td>1.8</td>
+							<td>0.0454</td>
+						</tr>
+
+						<tr>
+							<td>0.54</td>
+							<td>1.62</td>
+							<td>0.0457</td>
+						</tr>
+
+						<tr>
+							<td>0.54</td>
+							<td>1.98</td>
+							<td>0.0487</td>
+						</tr>
+					</table>
+				</li>
+			</ul>	
+		</li>
+	</ul>
+</body>
+</html>

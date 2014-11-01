@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 2</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	<h3>Edge-preserving Smoothing using Patch-Based Filtering</h3>
+	<ul >
+		<li>
+			<ul>
+				<li>
+					Image - barbara.png <br>		
+					<h4>sigma : 1, optimal rmsd : 0.1431</h4>
+					<figure>
+						<img src="A1.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="A2.png" width="600"/>
+						<figcaption>Corrupted Image </figcaption>
+					</figure>
+					<figure>
+						<img src="A3.png" width="600"/>
+						<figcaption>Filtered Version , rmsd = 0.1431 , elapsed time : 168.980877 seconds</figcaption>
+					</figure>
+					<figure>
+						<img src="A4.png" width="600"/>
+						<figcaption>Mask used to make patches isotropic </figcaption>
+					</figure>
+				</li>
+				<li>
+				<h4>Other Filtered Images</h4>
+					<figure>
+						<img src="B3.png" width="600"/>
+						<figcaption> 0.9 sigma , rmsd = 0.1442 , elapsed time : 169.970087 seconds</figcaption>
+					</figure>
+
+					<figure>
+						<img src="C3.png" width="600"/>
+						<figcaption> 1.1 sigma , rmsd = 0.1446 , elapsed time : 167.050844 seconds</figcaption>
+					</figure>
+					
+				</li>
+			</ul>	
+		</li>
+	</ul>
+</body>
+</html>
