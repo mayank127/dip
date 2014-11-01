@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 4</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	<h3>PCA</h3>
+	<ul >
+		<li>
+			<ul>
+				<li>
+					a <br>
+					<h4>Sigma : 20 </h4>
+					<h4>Patch : 7x7 </h4>
+
+					<h4>RMSD : 0.0721 </h4>
+					
+					<figure>
+						<img src="../images/a_orig.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="../images/a_noise.png" width="600"/>
+						<figcaption>Noisy Image </figcaption>
+					</figure>
+					<figure>
+						<img src="../images/a.png" width="600"/>
+						<figcaption>Reconstructed </figcaption>
+					</figure>
+				</li>
+				<li>
+					b <br>
+					<h4>Sigma : 20 </h4>
+					<h4>Patch : 7x7 </h4>
+					<h4>Window : 31x31 </h4>
+					<h4>K-neighbour : 200 </h4>
+
+					<h4>RMSD : 0.0744 </h4>
+					
+					<figure>
+						<img src="../images/a_orig.png" width="600"/>
+						<figcaption>Original Image </figcaption>
+					</figure>
+					<figure>
+						<img src="../images/b_noise.png" width="600"/>
+						<figcaption>Noisy Image </figcaption>
+					</figure>
+					<figure>
+						<img src="../images/b.png" width="600"/>
+						<figcaption>Reconstructed </figcaption>
+					</figure>
+				</li>
+				<li>
+					Bilateral <br>
+					<h4>RMSD : 0.1264 </h4>
+					<figure>
+						<img src="../images/bil.png" width="600"/>
+						<figcaption>Bilateral Image </figcaption>
+					</figure>
+
+					Bilateral is local whereas PCA takes non local means. PCA is similar to patch based filter.
+				</li>
+			</ul>	
+		</li>
+	</ul>
+</body>
+</html>
