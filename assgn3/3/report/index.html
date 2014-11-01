@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+		.inl li {
+			display: inline-block;
+			margin: 0;
+		}
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		    text-align:  center;
+		}
+		ul.a {list-style-type: disc;}
+		ul.b {list-style-type: square;}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 3</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	<h3>Face Recognition System</h3>
+	<ul class="a">
+		<li>
+			<h4>Image Reconstruction Person 8 - Sample 1</h4><br>
+			<figure>
+				<img src="../images/face_reconstructing.png" width="1100"/>
+				<figcaption>Face Reconstruction </figcaption>
+			</figure>
+			<p>As we increase the number of K, i.e. number of eigenfaces to be considered when reconstructing images it will make it more similar to the original image.</p>
+		</li>
+		<li>
+			<h4>Eigenfaces</h4><br>
+			<figure>
+				<img src="../images/eigenfaces.png" width="1100"/>
+				<figcaption>Eigenfaces </figcaption>
+			</figure>
+		</li>
+		<li>
+			<h4>Log FFT of Eigenfaces</h4><br>
+			<figure>
+				<img src="../images/log_fft_eigenfaces.png" width="1100"/>
+				<figcaption>Log FFT of Eigenfaces </figcaption>
+			</figure>
+			<p>The intensity of the fourier transform is high at the center of the plot and then it decreases rapidly as we move towards the edge for the plots. <br> For fourier transform of higher eigenvalues the decrease towards edges is faster and it is more concentrated towards center. For lower eigenvalues it looks more spread out and the decrement towards edges is slower. <br> As visible from eigenfaces for higher values they are more selective and hence the more concentrated fourier transform.</p>
+		</li>
+		
+	</ul>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+		.inl li {
+			display: inline-block;
+			margin: 0;
+		}
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		    text-align:  center;
+		}
+		ul.a {list-style-type: disc;}
+		ul.b {list-style-type: square;}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 3</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	<h3>Face Recognition System</h3>
+	<ul class="a">
+		<li>
+			<p>Using thresholding method to report the fact that no match exist. If the minimum differece between alpha is more than threshold we report no matching condition.</p>
+
+			<p>For finding out threshold - We divide the 5 person database in 2 parts. Use first 5 images of each person to find threshold. <br>Threshold = 0.95 * average of minimum squared distance between alpha</p>
+
+			<h4>Parameters</h4>
+			<ul class="b">
+				<li><h5> K = 175</h5></li>
+				<li><h5> Threshold =  1.4572e+07</h5></li>
+			</ul>
+				
+			<h4>Observation</h4>
+			<ul class="b">
+				<li><h5>False Positives = 20/50</h5></li>
+				<li><h5>False Negatives = 36/175</h5></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

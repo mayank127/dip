@@ -1,0 +1,130 @@
+<html>
+<head>
+	<title>CS 663 Digital Image Processing</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			text-align: center;
+			margin:0;
+		}
+		.inl li {
+			display: inline-block;
+			margin: 0;
+		}
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		    text-align:  center;
+		}
+		ul.a {list-style-type: disc;}
+		ul.b {list-style-type: square;}
+	</style>
+</head>
+<body>
+	<h1>Digital Image Processing - Assignment 3</h1>
+
+	<h3>Team Members</h3>
+	<ul>
+		<li>Mayank Meghwanshi - 110050012 </li>
+		<li>Vivek Atulkar - 110050039 </li>
+	</ul>
+
+	<h3>Fourier Analysis</h3>
+	<ul class="a">
+		<li>
+			Butterworh Filter <br>
+			<h4>D0 : 100</h4>
+			<figure>
+				<img src="../images/butterworth_filter.jpg" width="600"/>
+				<figcaption>Butterworth Filter </figcaption>
+			</figure>
+		</li>
+		<li>
+			Images <br>
+			<ul class="inl">
+				<li>
+					<figure>
+						<img src="../images/original.jpg" width="600"/>
+						<figcaption>Original </figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../images/error.jpg" width="600"/>
+						<figcaption>Error </figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="../images/reconstructed.jpg" width="600"/>
+						<figcaption>Filtered </figcaption>
+					</figure>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<h4>RMSD Values</h4>
+				<table width="600">
+					<thead>
+						<th>D0</th>
+						<th>RMSD</th>
+					</thead>
+					<tr>
+						<td>100</td>
+						<td>11.2262</td>
+					</tr>
+
+					<tr>
+						<td>95</td>
+						<td>11.2549</td>
+					</tr>
+
+					<tr>
+						<td>105</td>
+						<td>11.2415</td>
+					</tr>
+				</table>
+		</li>
+		<li>
+			<h4>Circular Mask</h4>
+			<h5>Center Pixel - 256,256 - 8.7351e+05</h5>
+			<table width="900">
+				<thead>
+					<th>Energy</th>
+					<th>Radius</th>
+					<th>RMSD</th>
+				</thead>
+				<tr>
+					<td>88%</td>
+					<td>-</td>
+					<td>Couldn't Reach this value</td>
+				</tr>
+
+				<tr>
+					<td>91%</td>
+					<td>2</td>
+					<td>39.7017</td>
+				</tr>
+
+				<tr>
+					<td>94%</td>
+					<td>5</td>
+					<td>32.2933</td>
+				</tr>
+
+				<tr>
+					<td>97%</td>
+					<td>14</td>
+					<td>23.5782</td>
+				</tr>
+				
+				<tr>
+					<td>99%</td>
+					<td>58.5</td>
+					<td>13.7258</td>
+				</tr>
+			</table>
+		</li>
+	</ul>
+</body>
+</html>
