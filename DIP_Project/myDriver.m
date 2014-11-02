@@ -7,10 +7,10 @@ else
 end
 
 % [Tx,Ty] = etf(I_gray, 5, 3);
-% visualize_etf(Tx, Ty);
+% visualize_etf(Ty, Tx);
 
 rho = 0.99;
 sig_m = 3.0;
 sig_c = 1.0;
-tau = 0.5;
-[E, He, Hg] = f_dog(I_gray, Ty, Tx, rho, sig_m, sig_c, tau);
+tau = 2.0;
+[E, He, Hg] = f_dog(I_gray, Ty, Tx, rho, sig_m, sig_c, tau, 3);
