@@ -7,11 +7,13 @@ function [Tx, Ty] = etf(I_gray, mu, T_iter)
     Gmag = sqrt(Gy.^2 + Gx.^2);
     Gx = Gx./Gmag;
     Gy = Gy./Gmag;
-
+    Gx(isnan(Gx))=0;
+    Gy(isnan(Gy))=0;
     Gmag = Gmag/sqrt(sum(sum(Gmag.^2)));
     Tx = -Gy;
     Ty = Gx;
-
+    
+    
 
     % mu = 2; % User Defined - parameter
     % T_iter = 3;
@@ -60,11 +62,14 @@ function [Tx, Ty] = etf(I_gray, mu, T_iter)
                 Gx(i,j) = sum(patchX(:));
                 Gy(i,j) = sum(patchY(:));
                 k = sqrt(Gx(i,j)^2 + Gy(i,j)^2);
+                
                 Gx(i,j) = Gx(i,j)/k;
                 Gy(i,j) = Gy(i,j)/k;
 
             end
         end
+        Gx(isnan(Gx))=0;
+        Gy(isnan(Gy))=0;
         Tx = Gx;
         Ty = Gy;
     end

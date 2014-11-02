@@ -11,10 +11,9 @@ function Mlist = visualize_etf(Tx, Ty)
     options.flow_correction = 1;
     options.niter_lic = 2; % several iterations gives better results
     % iterated lic
-    Mlist = zeros(n,m);
-    for i=1:4
-        options.M0 = M;
-        Mlist = perform_lic(v, i, options);
-    end
+    
+    options.M0 = M;
+    Mlist = perform_lic(v, 8, options);
+    
     % display
     imageplot(Mlist);
