@@ -1,4 +1,4 @@
-I_orig = linear_contrast_stretching( double(imread('lena_std.tif')));
+I_orig = linear_contrast_stretching( double(imread('einstein.bmp')));
 [M,N,C] = size(I_orig);
 if size(I_orig,3)==3
     I_gray = rgb2gray(I_orig);
@@ -22,3 +22,16 @@ r_e = 10;
 r_g = 10;
 Img = fbl(I_orig,  Ty, Tx, sig_e, r_e, sig_g, r_g, 2);
 
+quantize = 10;
+if size(I_orig,3)==3
+    colorTransform = makecform('srgb2lab');
+    Img_quant = applycform(Img, colorTransform);
+    
+    Img_quant(:,:,1) = my_quantize(Img_quant(:,:,1), quantize);
+    
+    colorTransform = makecform('lab2srgb');
+    Img_quant = applycform(Img_quant, colorTransform);
+    
+else
+    Img_quant = my_quantize(Img, quantize);
+end
