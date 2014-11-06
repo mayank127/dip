@@ -35,3 +35,8 @@
  end
  
   scatter(p(:,1),p(:,2), 'b.'); hold on;  scatter(mod_p(:,1),mod_p(:,2),'r+');
+  
+  MIN = min(count)
+  MAX = max(count)
+  AVG = sum(count)/tot_points
+  
