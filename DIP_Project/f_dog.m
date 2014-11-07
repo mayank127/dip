@@ -104,6 +104,6 @@ function [edges, He, Hg] = f_dog(I_gray, Tx, Ty, rho, sig_m, sig_c, tau, iter)
                 end
             end
         end
-        I_gray = I_gray + edges;
+        I_gray = I_gray .* edges;
     end
 end
