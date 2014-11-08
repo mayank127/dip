@@ -38,15 +38,14 @@ function [Tx, Ty] = etf(I_gray, mu, T_iter)
         for i=1:M
             for j=1:N
                 imin = max(1, i-mu);
-                imax = min(N, i+mu);
+                imax = min(M, i+mu);
                 jmin = max(1, j-mu);
-                jmax = min(M, j+mu);
+                jmax = min(N, j+mu);
 
                 imin2 = mu+1-(i-imin);
                 jmin2 = mu+1-(j-jmin);
                 imax2 = mu+1+(imax-i);
                 jmax2 = mu+1+(jmax-j);
-
 
                 patchX = Tx(imin:imax, jmin:jmax);
                 patchY = Ty(imin:imax, jmin:jmax);

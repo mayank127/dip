@@ -91,8 +91,8 @@ function [edges, He, Hg] = f_dog(I_gray, Tx, Ty, rho, sig_m, sig_c, tau, iter)
                 end
             end
         end
-        figure, imshow(Hg,[]);
-        figure, imshow(He,[]);
+%         figure, imshow(Hg,[]);
+%         figure, imshow(He,[]);
 
         MAX = max(1 + tanh(He(:)))
         for i=1:M

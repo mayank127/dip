@@ -1,4 +1,4 @@
-I_orig = linear_contrast_stretching( double(imread('einstein.bmp')));
+I_orig = linear_contrast_stretching( double(imread('dataset/narrow_canal.jpg')));
 [M,N,C] = size(I_orig);
 if size(I_orig,3)==3
     I_gray = rgb2gray(I_orig);
@@ -8,7 +8,7 @@ end
 
 
 [Tx,Ty] = etf(I_gray, 5, 3);
-visualize_etf(Ty, Tx);
+% visualize_etf(Ty, Tx);
 
 rho = 0.99;
 sig_m = 3.0;
@@ -35,3 +35,4 @@ if size(I_orig,3)==3
 else
     Img_quant = my_quantize(Img, quantize);
 end
+I_final = bsxfun(@times, Img_quant, E);
