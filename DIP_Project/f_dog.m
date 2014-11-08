@@ -25,6 +25,8 @@ function [edges, He, Hg] = f_dog(I_gray, Tx, Ty, rho, sig_m, sig_c, tau, iter)
         Xn = zeros(M,N);
         Y = zeros(M,N);
         Yn = zeros(M,N);
+        
+        DoG = dog(0:beta, sig_c,sig_s, rho);
         for a=0:beta
             for i=1:M
                 for j=1:N
@@ -33,7 +35,7 @@ function [edges, He, Hg] = f_dog(I_gray, Tx, Ty, rho, sig_m, sig_c, tau, iter)
                         Xn(i,j) = i;
                         Y(i,j) = j;
                         Yn(i,j) = j;
-                        Hg(i,j) = Hg(i,j) + dog(0, sig_c, sig_s, rho) * I_gray(X(i,j), Y(i,j));
+                        Hg(i,j) = Hg(i,j) + DoG(a+1) * I_gray(X(i,j), Y(i,j));
                         in = i;
                         jn = j;
                         inn = i;
@@ -52,13 +54,15 @@ function [edges, He, Hg] = f_dog(I_gray, Tx, Ty, rho, sig_m, sig_c, tau, iter)
                         inn = my_floor(Xn(i,j),M);
                         jnn = my_floor(Yn(i,j),N);
 
-                        Hg(i,j) = Hg(i,j) + dog(a, sig_c, sig_s, rho) * (I_gray(in,jn) + I_gray(inn,jnn));
+                        Hg(i,j) = Hg(i,j) + DoG(a+1) * (I_gray(in,jn) + I_gray(inn,jnn));
                     end
                 end
             end
         end
 
         He = zeros(M,N);
+        
+        G = normpdf(0:alpha, 0,sig_m);
         for a=0:alpha
             for i=1:M
                 for j=1:N
@@ -67,7 +71,7 @@ function [edges, He, Hg] = f_dog(I_gray, Tx, Ty, rho, sig_m, sig_c, tau, iter)
                         Xn(i,j) = i;
                         Y(i,j) = j;
                         Yn(i,j) = j;
-                        He(i,j) = He(i,j) + normpdf(0, 0, sig_m) * Hg(X(i,j), Y(i,j));
+                        He(i,j) = He(i,j) + G(a+1) * Hg(X(i,j), Y(i,j));
                         in = i;
                         jn = j;
                         inn = i;
@@ -86,7 +90,7 @@ function [edges, He, Hg] = f_dog(I_gray, Tx, Ty, rho, sig_m, sig_c, tau, iter)
                         inn = my_floor(Xn(i,j),M);
                         jnn = my_floor(Yn(i,j),N);
 
-                        He(i,j) = He(i,j) + normpdf(a,0,sig_m) * (Hg(in,jn) + Hg(inn,jnn));
+                        He(i,j) = He(i,j) + G(a+1) * (Hg(in,jn) + Hg(inn,jnn));
                     end
                 end
             end

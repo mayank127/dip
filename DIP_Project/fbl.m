@@ -28,6 +28,7 @@ function [smooth] = fbl(I_orig , Tx, Ty, sig_e, r_e, sig_g, r_g, iter)
         Yn = zeros(M,N);
         Ce = zeros(M,N,C);
         ve = zeros(M,N);
+        G = normpdf(0:alpha, 0, sig_e);
         for a=0:alpha
             for i=1:M
                 for j=1:N
@@ -36,7 +37,7 @@ function [smooth] = fbl(I_orig , Tx, Ty, sig_e, r_e, sig_g, r_g, iter)
                         Xn(i,j) = i;
                         Y(i,j) = j;
                         Yn(i,j) = j;
-                        val = normpdf(0, 0, sig_e) * color_gaus(I_orig, i, j, X(i,j), Y(i,j), r_e);
+                        val = G(a+1) * color_gaus(I_orig, i, j, X(i,j), Y(i,j), r_e);
                         ve(i,j) = ve(i,j) + val;
                         
                         Ce(i,j,:) = Ce(i,j,:) + val*I_orig(X(i,j),Y(i,j),:);
@@ -59,8 +60,8 @@ function [smooth] = fbl(I_orig , Tx, Ty, sig_e, r_e, sig_g, r_g, iter)
                         inn = my_floor(Xn(i,j),M);
                         jnn = my_floor(Yn(i,j),N);
                         
-                        val = normpdf(a, 0, sig_e) * color_gaus(I_orig, i, j, in, jn, r_e);
-                        valn = normpdf(a, 0, sig_e) * color_gaus(I_orig, i, j, inn, jnn, r_e);
+                        val = G(a+1) * color_gaus(I_orig, i, j, in, jn, r_e);
+                        valn = G(a+1) * color_gaus(I_orig, i, j, inn, jnn, r_e);
                         ve(i,j) = ve(i,j) + val + valn;
                         
                         
@@ -77,6 +78,7 @@ function [smooth] = fbl(I_orig , Tx, Ty, sig_e, r_e, sig_g, r_g, iter)
         end
         Cg = zeros(M,N,C);
         ve = zeros(M,N);
+        G = normpdf(0:beta, 0, sig_g);
         for a=0:beta
             for i=1:M
                 for j=1:N
@@ -85,7 +87,7 @@ function [smooth] = fbl(I_orig , Tx, Ty, sig_e, r_e, sig_g, r_g, iter)
                         Xn(i,j) = i;
                         Y(i,j) = j;
                         Yn(i,j) = j;
-                        val = normpdf(0, 0, sig_g) * color_gaus(Ce, i, j, X(i,j), Y(i,j), r_g);
+                        val = G(a+1) * color_gaus(Ce, i, j, X(i,j), Y(i,j), r_g);
                         ve(i,j) = ve(i,j) + val;
                         Cg(i,j,:) = Cg(i,j,:) + val*Ce(X(i,j),Y(i,j),:);
                         
@@ -107,8 +109,8 @@ function [smooth] = fbl(I_orig , Tx, Ty, sig_e, r_e, sig_g, r_g, iter)
                         inn = my_floor(Xn(i,j),M);
                         jnn = my_floor(Yn(i,j),N);
                         
-                        val = normpdf(a, 0, sig_g) * color_gaus(Ce, i, j, in, jn, r_g);
-                        valn = normpdf(a, 0, sig_g) * color_gaus(Ce, i, j, inn, jnn, r_g);
+                        val = G(a+1) * color_gaus(Ce, i, j, in, jn, r_g);
+                        valn = G(a+1) * color_gaus(Ce, i, j, inn, jnn, r_g);
                         ve(i,j) = ve(i,j) + val + valn;
                         
                         Cg(i,j,:) = Cg(i,j,:) + val * Ce(in,jn,:);
